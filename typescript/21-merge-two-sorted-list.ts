@@ -1,16 +1,16 @@
 /**
  * Definition for singly-linked list.
- * function ListNode(val, next) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.next = (next===undefined ? null : next)
+ * class ListNode {
+ *     val: number
+ *     next: ListNode | null
+ *     constructor(val?: number, next?: ListNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.next = (next===undefined ? null : next)
+ *     }
  * }
  */
-/**
- * @param {ListNode} list1
- * @param {ListNode} list2
- * @return {ListNode}
- */
- var mergeTwoLists = function(list1, list2) {   
+
+ function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode | null {
     let dummy = new ListNode(), curr = dummy
     while (list1 !== null && list2 !== null) {
         if (list1.val < list2.val) {
