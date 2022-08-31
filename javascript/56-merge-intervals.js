@@ -9,7 +9,6 @@
     const result = []
     let prev = intervals[0]
     for (let i = 1; i < intervals.length; i++) {
-        intervals[i]
         // if the interval overlaps with the previous one, use the max end to create a new interval
         if (intervals[i][0] <= prev[1]) {
             prev[1] = Math.max(prev[1], intervals[i][1])
