@@ -11,7 +11,7 @@ function isHappy(n: number): boolean {
     let slow = n
     let fast = getSquaredSum(n)
     while (slow !== fast) {
-        if (slow === 1) return true
+        if (fast === 1) return true
         slow = getSquaredSum(slow)
         fast = getSquaredSum(getSquaredSum(fast))
     }
