@@ -5,32 +5,32 @@ func spiralOrder(matrix [][]int) []int {
     r := m * n
     result := make([]int, r)
     sr, sc, er, ec := 0, 0, m - 1, n - 1
-    idx := 0
-    for idx < r {
+    current := 0
+    for current < r {
         for i := sc; i <= ec; i++ {
-            result[idx] = matrix[sr][i]
-            idx++
+            result[current] = matrix[sr][i]
+            current++
         }
         
         for i := sr + 1; i <= er; i++ {
-            result[idx] = matrix[i][ec]
-            idx++
+            result[current] = matrix[i][ec]
+            current++
         }
         
         for i := ec - 1; i >= sc; i-- {
             if sr == er {
                 break
             }
-            result[idx] = matrix[er][i]
-            idx++
+            result[current] = matrix[er][i]
+            current++
         }
         
         for i := er - 1; i >= sr + 1; i-- {
             if sc == ec {
                 break
             }
-            result[idx] = matrix[i][sc]
-            idx++
+            result[current] = matrix[i][sc]
+            current++
         }
         sr++
         sc++
